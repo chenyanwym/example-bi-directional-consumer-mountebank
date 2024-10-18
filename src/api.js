@@ -16,12 +16,10 @@ export class ProductAPIClient {
     if (!path.startsWith("/")) {
       path = "/" + path;
     }
-    console.log("--------url is------:"+`${this.url}${path}`)
     return `${this.url}${path}`;
   }
 
   async getAllProducts() {
-    console.log("--------url is------:"+`${this.url}`)
     return axios
       .get(this.withPath("/products"))
       .then((r) => r.data.map((p) => new Product(p)));
