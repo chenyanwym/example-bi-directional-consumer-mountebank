@@ -48,6 +48,7 @@ describe("API Contract Test", () => {
       await mb.createImposter(imposter);
 
       // make request to Pact mock server
+      console.log("test scenario product exists")
       const products = await api.getAllProducts();
 
       // assert that we got the expected response
